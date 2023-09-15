@@ -1,4 +1,6 @@
 import config from "@/config"
+import { signOut } from "next-auth/react";
+
 
 const { keys } = config
 
@@ -36,6 +38,13 @@ export default function SideBar(
                 }
                 )
             }
+            <div 
+                className="text-md mt-auto cursor-pointer"
+                onClick={() => signOut({ callbackUrl: "/" })}    
+            >
+                Sign Out
+            </div>
+
         </div>
     )
 }
