@@ -4,14 +4,10 @@ import { IconBell } from "@tabler/icons-react";
 import Image from "next/image";
 
 export default function Header({ currentTab }: { currentTab: DataString }) {
-
     const { data: session } = useSession();
-    const image = session?.user?.image;
-
-    console.log(image);
 
     return (
-        <div className="w-full h-8 flex mt-4 justify-between">
+        <div className="w-full h-8 flex mt-4 justify-between px-3 md:px-0">
             <div className="text-2xl font-semibold capitalize">
                 {currentTab}
             </div>

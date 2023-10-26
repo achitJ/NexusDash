@@ -10,7 +10,8 @@ type ProfileInputProps = {
 type AuthInputProps = {
     placeholder: string,
     label: string,
-    type?: string
+    type?: string,
+    disabled?: boolean
 };
 
 export function ProfileInput({ 
@@ -36,7 +37,7 @@ export function ProfileInput({
 }
 
 export function AuthInput({
-    placeholder, label, type = "text"
+    placeholder, label, type = "text", disabled = false
 }: AuthInputProps) {
     return (
         <div className="mb-4">
@@ -46,7 +47,7 @@ export function AuthInput({
             <input className={`bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500`}
                 type={type}
                 placeholder={placeholder}
-
+                disabled={disabled}
             />
         </div>
     );
